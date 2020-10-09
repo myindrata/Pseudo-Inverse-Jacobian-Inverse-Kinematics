@@ -9,10 +9,8 @@ import p_trigd as tr
 #theta3=360-theta1-theta2
 def dh_par(j1,j2,j3):
     j4=360-(j2+j3)
-    j=np.array([[j1, j2, j3, j4],
-                [17.5, 0, 0, 0],
-                [3, 22.3, 31.5, 14],
-                [90, 0, 0, 0]])
+    #j=np.array([[j1, j2, j3, j4],[17.5, 0, 0, 0],[3, 22.3, 31.5, 14],[90, 0, 0, 0]], dtype=object)
+    j=np.array([[j1, j2, j3, j4],[10, 0, 0, 0],[5, 25, 25, 10],[90, 0, 0, 0]], dtype=object)
     return j
 
 def dh(theta,d,a,alpha):
@@ -83,10 +81,10 @@ def fk_draw2(Q):
     
     #ax.plot(X, Y, Z, marker='o')
     #ax.plot(X,Y,Z, 'go--', linewidth=2, markersize=12)
-    ax.plot(X1,Y1,Z1, color='green', marker='o', linestyle='solid', linewidth=10, markersize=20)
-    ax.plot(X2,Y2,Z2, color='red', marker='o', linestyle='solid', linewidth=10, markersize=20)
-    ax.plot(X3,Y3,Z3, color='blue', marker='o', linestyle='solid', linewidth=10, markersize=20)
-    ax.plot(X4,Y4,Z4, color='black', marker='o', linestyle='solid', linewidth=10, markersize=20)
+    ax.plot(X1,Y1,Z1, color='green', marker='o', linestyle='solid', linewidth=5, markersize=20)
+    ax.plot(X2,Y2,Z2, color='red', marker='o', linestyle='solid', linewidth=5, markersize=20)
+    ax.plot(X3,Y3,Z3, color='blue', marker='o', linestyle='solid', linewidth=5, markersize=20)
+    ax.plot(X4,Y4,Z4, color='black', marker='o', linestyle='solid', linewidth=5, markersize=10)
     ax.set_xlabel('X')
     ax.set_ylabel('Y')
     ax.set_zlabel('Z')
@@ -94,7 +92,7 @@ def fk_draw2(Q):
     ax.set_ylim([0,100])
     ax.set_zlim([0,50])
     ax.set_title('dh-fk')
-    ax.view_init(20, -120)
+    ax.view_init(20, 120)
     plt.show()
     return X1,Y1,Z1,X2,Y2,Z2,X2,Y2,Z2
 
@@ -106,15 +104,15 @@ def jacobian(dhkine):
 
     Z1=dhkine[0:3,2:3]
     O1=dhkine[0:3,3:4]
-    Jac2=np.cross(Z1,(O4-O1))
+    Jac2=np.cross(Z1,(O4-O1), axis=0)
 
     Z2=dhkine[0:3,6:7]
     O2=dhkine[0:3,7:8]
-    Jac3=np.cross(Z2,O4-O2)
+    Jac3=np.cross(Z2,(O4-O2), axis=0)
 
     Z3=dhkine[0:3,10:11]
     O3=dhkine[0:3,11:12]
-    Jac4=np.cross(Z3,O4-O3)
+    Jac4=np.cross(Z3,(O4-O3), axis=0)
     return np.hstack((Jac1,Jac2,Jac3,Jac4))
 
 def PinvJac(jacobian):

@@ -23,6 +23,12 @@
       <height>16</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
     <property name="text">
      <string>Joint 1 Angle:</string>
     </property>
@@ -36,6 +42,12 @@
       <height>16</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
     <property name="text">
      <string>Joint 2 angle:</string>
     </property>
@@ -48,6 +60,12 @@
       <width>91</width>
       <height>16</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="text">
      <string>Joint 3 angle:</string>
@@ -75,11 +93,16 @@
    <widget class="QPushButton" name="pushButton_reset">
     <property name="geometry">
      <rect>
-      <x>720</x>
-      <y>200</y>
-      <width>221</width>
-      <height>23</height>
+      <x>860</x>
+      <y>90</y>
+      <width>161</width>
+      <height>111</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>Reset</string>
@@ -94,6 +117,12 @@
       <height>16</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
     <property name="text">
      <string>Y Axes: </string>
     </property>
@@ -106,6 +135,12 @@
       <width>91</width>
       <height>16</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="text">
      <string>X axes: </string>
@@ -120,6 +155,12 @@
       <height>16</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
     <property name="text">
      <string>Z axes: </string>
     </property>
@@ -128,10 +169,15 @@
     <property name="geometry">
      <rect>
       <x>620</x>
-      <y>260</y>
-      <width>151</width>
+      <y>240</y>
+      <width>191</width>
       <height>16</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>PINJ Inverse Kinematics</string>
@@ -149,7 +195,9 @@
     <property name="font">
      <font>
       <family>MS PGothic</family>
-      <pointsize>16</pointsize>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
      </font>
     </property>
     <property name="text">
@@ -165,7 +213,7 @@
    <widget class="QDoubleSpinBox" name="doubleSpinBox1">
     <property name="geometry">
      <rect>
-      <x>700</x>
+      <x>772</x>
       <y>90</y>
       <width>62</width>
       <height>22</height>
@@ -184,7 +232,7 @@
    <widget class="QDoubleSpinBox" name="doubleSpinBox2">
     <property name="geometry">
      <rect>
-      <x>700</x>
+      <x>772</x>
       <y>120</y>
       <width>62</width>
       <height>22</height>
@@ -203,7 +251,7 @@
    <widget class="QDoubleSpinBox" name="doubleSpinBox3">
     <property name="geometry">
      <rect>
-      <x>700</x>
+      <x>772</x>
       <y>150</y>
       <width>62</width>
       <height>22</height>
@@ -223,10 +271,15 @@
     <property name="geometry">
      <rect>
       <x>620</x>
-      <y>60</y>
-      <width>161</width>
+      <y>40</y>
+      <width>181</width>
       <height>16</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>DH-Forward Kinematics</string>
@@ -235,7 +288,7 @@
    <widget class="QDoubleSpinBox" name="doubleSpinBox_ik1">
     <property name="geometry">
      <rect>
-      <x>700</x>
+      <x>777</x>
       <y>290</y>
       <width>62</width>
       <height>22</height>
@@ -251,7 +304,7 @@
    <widget class="QDoubleSpinBox" name="doubleSpinBox_ik2">
     <property name="geometry">
      <rect>
-      <x>700</x>
+      <x>777</x>
       <y>320</y>
       <width>62</width>
       <height>22</height>
@@ -264,7 +317,7 @@
    <widget class="QDoubleSpinBox" name="doubleSpinBox_ik3">
     <property name="geometry">
      <rect>
-      <x>700</x>
+      <x>777</x>
       <y>350</y>
       <width>62</width>
       <height>22</height>
@@ -277,14 +330,239 @@
    <widget class="QPushButton" name="pushButton_runik">
     <property name="geometry">
      <rect>
-      <x>780</x>
-      <y>290</y>
+      <x>860</x>
+      <y>310</y>
       <width>161</width>
-      <height>81</height>
+      <height>61</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>Run IK</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labels3_2">
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>180</y>
+      <width>91</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Joint 4 angle:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_j4">
+    <property name="geometry">
+     <rect>
+      <x>702</x>
+      <y>180</y>
+      <width>61</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_x4">
+    <property name="geometry">
+     <rect>
+      <x>697</x>
+      <y>290</y>
+      <width>61</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_y4">
+    <property name="geometry">
+     <rect>
+      <x>697</x>
+      <y>320</y>
+      <width>61</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_z4">
+    <property name="geometry">
+     <rect>
+      <x>697</x>
+      <y>350</y>
+      <width>61</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_iks">
+    <property name="geometry">
+     <rect>
+      <x>701</x>
+      <y>269</y>
+      <width>61</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Real Pos.</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_iks_2">
+    <property name="geometry">
+     <rect>
+      <x>777</x>
+      <y>268</y>
+      <width>71</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Target Pos.</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_rand">
+    <property name="geometry">
+     <rect>
+      <x>860</x>
+      <y>272</y>
+      <width>161</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Random Target</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_j3">
+    <property name="geometry">
+     <rect>
+      <x>702</x>
+      <y>150</y>
+      <width>61</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_j1">
+    <property name="geometry">
+     <rect>
+      <x>702</x>
+      <y>90</y>
+      <width>61</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_iks_3">
+    <property name="geometry">
+     <rect>
+      <x>706</x>
+      <y>69</y>
+      <width>61</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Real Pos.</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_j2">
+    <property name="geometry">
+     <rect>
+      <x>702</x>
+      <y>120</y>
+      <width>61</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_iks_4">
+    <property name="geometry">
+     <rect>
+      <x>770</x>
+      <y>70</y>
+      <width>71</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Target Pos.</string>
     </property>
    </widget>
   </widget>
