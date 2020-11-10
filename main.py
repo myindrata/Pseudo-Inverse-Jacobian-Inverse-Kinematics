@@ -7,7 +7,7 @@ import time
 import random
 import sys
 from threading import Event
-
+import json
 
 #sys.path.append(".")
 import p_fkdh as fk
@@ -18,6 +18,7 @@ class ikfk_arm(Ui_MainWindow):
     j1,j2,j3,j4,x4,y4,z4,Tm=0,0,0,0,0,0,0,0
     xt,yt,zt=0,0,0
     re_set=0
+    objek={}
     def __init__(self, window):
         self.setupUi(window)
         #init
@@ -27,7 +28,16 @@ class ikfk_arm(Ui_MainWindow):
         self.pushButton_reset.clicked.connect(self.initState)
         self.pushButton_runik.clicked.connect(self.start_ik)
         self.pushButton_rand.clicked.connect(self.randomtarget)
-    
+        self.pushGButton.clicked.connect(self.read_json)
+        self.pushButton_Robot.clicked.connect(self.konek2robot)
+
+    def konek2robot(self):
+        desc="Detected.. "
+        for x in range(len(self.objek)):
+            desc = desc+"\n"+str(x)+": objek: "+str(self.objek[x]['nama'])+" Pos: "+str(self.objek[x]['centerbbox'])
+        #self.label_RStatus.setText(str(len(self.objek)))
+        self.label_RStatus.setText(desc)
+        print(self.objek)
 
     def initState(self):
         self.re_set=1
@@ -85,8 +95,14 @@ class ikfk_arm(Ui_MainWindow):
             ptarget=np.vstack([self.xt, self.yt, self.zt])
             pstart=np.vstack([x_start,y_start,z_start])
             delta=fk.divelo(ptarget, pstart)
-            dXYZ=delta[0:3]/10
+            step=5
             EucXYZ=delta[4]
+            if abs(EucXYZ)>5:
+                pembagi_step=abs(EucXYZ)/step
+                dXYZ=delta[0:3]/pembagi_step
+            else:
+                dXYZ=delta[0:3]
+                
             if abs(EucXYZ)<=0.01:
                 self.MplWidget.msgwarning()
             else:
@@ -141,7 +157,25 @@ class ikfk_arm(Ui_MainWindow):
         self.MplWidget.canvas.axes.text(self.x4,self.y4,self.z4,'({:.2f}, {:.2f}, {:.2f})'.format(self.x4,self.y4,self.z4), weight='bold', fontsize=12,)
         self.MplWidget.defcanvas()
         self.MplWidget.canvas.draw()
-              
+    
+    def read_json(self):
+        # read file
+        with open('dataobjek.json', 'r') as myfile:
+            data=myfile.read()
+        # parse file
+        obj = json.loads(data)
+        self.objek=obj['objek']
+        self.label_RStatus.setText("json loaded")
+    
+    def write_json(self,data, filename='dataobjek.json'):
+        with open(filename,'w') as f: 
+            json.dump(data, f) 
+      
+    def emptyjson(self, filename='dataobjek.json'):
+        dataobj={}
+        json_object = json.dumps(dataobj) 
+        write_json(json_object,filename)
+                    
       
 class kinematic():
       def __init__(self):
